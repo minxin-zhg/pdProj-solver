@@ -1,5 +1,5 @@
-function [x,y,status,Stats] =  runProb(prob_name,pdb_parms)
-%        [x,y,status,Stats] =  runProb(prob_name,pdb_parms)
+function [x,y,status,Stats] =  runProb(prob_name,pdproj_parms)
+%        [x,y,status,Stats] =  runProb(prob_name,pdproj_parms)
 % If no arguments are provided it will run the custom problem defined
 % in getCUSTomProblem.m using whatever solver is already set in the parms file:
 % >> runProb();
@@ -15,11 +15,11 @@ function [x,y,status,Stats] =  runProb(prob_name,pdb_parms)
     if nargin == 1
       [x,y,status,Stats] = pdbTest(prob,'my_pdproj_parms');
     else
-      [x,y,status,Stats] = pdbTest(prob,pdb_parms);
+      [x,y,status,Stats] = pdbTest(prob,pdproj_parms);
     end
   else
     [prob] = getCUSTomProblem();
-    [x,y,status,Stats] = pdbTest(prob,'my_pdb_parms');
+    [x,y,status,Stats] = pdbTest(prob,'my_pdproj_parms');
   end
   cutest_terminate
 end
